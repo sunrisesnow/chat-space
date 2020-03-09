@@ -13,12 +13,12 @@ $color_333:#333;
   .side-bar {
     width: 300px;
     float: left;
-    .side-bar__header {
+    &__header {
       height: 100px;
       background-color: #253141;
       display: flex;
       align-items: center;
-      .side-header__box {
+      &-box {
         height: 20px;
         width: 260px;
         margin: 0 20px;
@@ -50,11 +50,11 @@ $color_333:#333;
         }
       }
     }
-    .side-bar__groups {
+    .side-bar__group {
       height: calc(100vh - 100px);
       background-color: #2f3e51;
       padding: 20px 20px 0;
-      .group {
+      &-list {
         height: 85px;
         width: 260px;
         color: $color_white;
@@ -73,17 +73,17 @@ $color_333:#333;
     }
   }  
 
-  .chat-main {
+  .main {
     width: calc(100vw - 300px);
     float: left;
-    .main-header {
+    &-header {
       height: 100px;
       padding: 0 40px;
       display: flex;
       justify-content: space-between;
       background-color: $color_white;
       border-bottom: solid 1px #eeeeee;
-      .main-header__left-box {
+      &__left-box {
         padding-top: 35px;
         &__current-group {
           font-size: 20px;
@@ -91,35 +91,36 @@ $color_333:#333;
             margin: 0 0 15px;
             box-sizing: border-box;
         }
-        .member-list {
+        &__member-list {
           font-size: 12px;
           color: #999999;
           display: flex;
           list-style: none;
-          .member {
+          &__member {
             margin-left: 5px;
           }
         }
       }
-      .main-header__right-box {
-        height: 40px;
-        width: 72px;
-        line-height: 40px;
-        padding: 0 20px 32px;
-        margin-top: 28px;
-        border: solid 1px $color_aqua;
+      &__right-box {
         .edit-btn {
+          display: inline-block;
           text-decoration: none;
           color: $color_aqua;
+          height: 40px;
+          width: 72px;
+          line-height: 40px;
+          padding: 0 20px 32px;
+          margin-top: 28px;
+          border: solid 1px $color_aqua;
         }
       }
     }
 
-    .main-list {
+    .message-list {
       height: calc(100vh - 100px - 90px);
       padding: 35px 40px;
       background-color: #fafafa;
-      .message-box {
+      &__box {
         &__info {
           display: flex;
           &__talker {
@@ -144,12 +145,12 @@ $color_333:#333;
     .main-form {
       background-color: #ddd;
       display: flex;
-      .new-message {
+      &__new-message {
         height: 50px;
         width: 100%;
         margin: 20px 40px;
         display: flex;
-        .input-box {
+        &__input-box {
           display: flex;
           width: 100%;
           position: relative;
@@ -166,7 +167,7 @@ $color_333:#333;
             top: 10px;
             right: 10px;
             cursor: pointer;
-            &__file {
+            &-file {
               display: none;
             }
           }
