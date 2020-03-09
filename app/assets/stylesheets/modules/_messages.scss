@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+}
+
+$color_white:white;
+$color_aqua:#38aef0;
+$color_333:#333;
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+
+  .side-bar {
+    width: 300px;
+    float: left;
+    &__header {
+      height: 100px;
+      background-color: #253141;
+      display: flex;
+      align-items: center;
+      &-box {
+        height: 20px;
+        width: 260px;
+        margin: 0 20px;
+        background-color: $color_333;
+        display: flex;
+        justify-content: space-between;
+        &__user-name {
+          height: 20px;
+          width: calc(260px - 60px);
+          font-size: 16px;
+          color: $color_white;
+          font-weight: bold;
+          line-height: 20px;
+        }
+        &__menu {
+          height: 20px;
+          width: 60px;
+          display: flex;
+          justify-content: flex-end;
+          .far {
+            color: $color_white;
+            text-decoration: none;
+            margin: 0 5px 0 0;
+          }
+          .fas {
+            color: $color_white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .side-bar__group {
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+      padding: 20px 20px 0;
+      &-list {
+        height: 85px;
+        width: 260px;
+        color: $color_white;
+        text-decoration: none;
+        &__group-name {
+          font-size: 15px;
+          height: 23px;
+          padding: 0 0 5px;
+        }
+        &__latest-message {
+          font-size: 11px;
+          height: 17px;
+          padding: 0 0 40px;
+        }
+      }
+    }
+  }  
+
+  .main {
+    width: calc(100vw - 300px);
+    float: left;
+    &-header {
+      height: 100px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      background-color: $color_white;
+      border-bottom: solid 1px #eeeeee;
+      &__left-box {
+        padding-top: 35px;
+        &__current-group {
+          font-size: 20px;
+            color: $color_333;
+            margin: 0 0 15px;
+            box-sizing: border-box;
+        }
+        &__member-list {
+          font-size: 12px;
+          color: #999999;
+          display: flex;
+          list-style: none;
+          &__member {
+            margin-left: 5px;
+          }
+        }
+      }
+      &__right-box {
+        .edit-btn {
+          display: inline-block;
+          text-decoration: none;
+          color: $color_aqua;
+          height: 40px;
+          width: 72px;
+          line-height: 40px;
+          padding: 0 20px 32px;
+          margin-top: 28px;
+          border: solid 1px $color_aqua;
+        }
+      }
+    }
+
+    .message-list {
+      height: calc(100vh - 100px - 90px);
+      padding: 35px 40px;
+      background-color: #fafafa;
+      &__box {
+        &__info {
+          display: flex;
+          &__talker {
+            font-size: 16px;
+            color: $color_333;
+            padding-bottom: 12px;
+          }
+          &__date {
+            font-size: 12px;
+            color: #999;
+            margin-left: 10px;
+          }
+        }
+        &__text {
+          font-size: 14px;
+          color: #434a54;
+          padding-bottom: 46px;
+        }
+      }
+    }
+
+    .main-form {
+      background-color: #ddd;
+      display: flex;
+      &__new-message {
+        height: 50px;
+        width: 100%;
+        margin: 20px 40px;
+        display: flex;
+        &__input-box {
+          display: flex;
+          width: 100%;
+          position: relative;
+          &__text {
+            height: 50px;
+            width: 100%;
+            color: #434a54;
+            border-style: none;
+            padding: 0 40px 0 10px;
+          }
+          &__image {
+            font-size: 1.3rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            &-file {
+              display: none;
+            }
+          }
+        }
+        .submit-btn {
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: $color_aqua;
+          color: $color_white;
+          cursor: pointer;
+        }
+      }
+    }
+  }  
+}
