@@ -1,34 +1,28 @@
 .main
   .main-header
-    .main-header__left-box
-      %h2.main-header__left-box__current-group test
-      %ul.main-header__left-box__member-list
+    .left-box
+      .group-name
+        = @group.name    
+      .member-list
         Member :
-        %li.main-header__left-box__member-list__member masa
-        %li.main-header__left-box__member-list__member masa
-        %li.main-header__left-box__member-list__member masa
-        %li.main-header__left-box__member-list__member masa
-    .main-header__right-box
-      = link_to "#",class: "edit-btn" do
+        .member-list__name
+          - array = @group.user_ids
+          - array.each_with_index do |item,i|
+            = User.find(array[i]).name
+
+    .right-box
+      = link_to edit_group_path(@group),class:"edit-btn" do
         Edit
 
-  .message-list
-    .message-list__box
-      .message-list__box__info 
-        %p.message-list__box__info__talker masa
-        %p.message-list__box__info__date 2019/11/20(Wed) 17:43:01
-      %p.message-list__box__text おはよう！
-    .message-list__box
-      .message-list__box__info 
-        %p.message-list__box__info__talker masa
-        %p.message-list__box__info__date 2019/11/20(Wed) 17:43:34
-      %p.message-list__box__text 今日は夜から雨
+  .messages
+    = render @messages
 
-  .main-form
-    %form.main-form__new-message
-      .main-form__new-message__input-box
-        %input{type:"text", class:"main-form__new-message__input-box__text", placeholder:"type a message"}
-        %label{class:"main-form__new-message__input-box__image"}
-          = icon('far','image')
-          %input{type:"file", class:"main-form__new-message__input-box__image-file"}
-      %input{type:"submit",class:"submit-btn",value:"Send"}
+  .form 
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message',
+      placeholder: 'type a message'
+      .form__choice
+        = f.label :image, class: 'form__choice__image' do
+          = icon('far','image', class: 'icon')
+          = f.file_field :image, class:'choice'
+      = f.submit 'Send', class: 'form__submit'
