@@ -1,10 +1,10 @@
 .side-bar
 
-  .side-bar__header
-    .side-bar__header-box
-      %p.side-bar__header-box__user-name
+  .header
+    .header-box
+      %p.header-box__user-name
         = current_user.name
-      %ul.side-bar__header-box__menu
+      %ul.header-box__menu
         %li.side-bar__header-box__menu__new-group
           = link_to new_group_path do
             = icon('far','edit')
@@ -12,12 +12,11 @@
           = link_to edit_user_path(current_user.id) do
             = icon('fas','cog')
 
-  .side-bar__group
-    .side-bar__group-list
-      - current_user.groups.each do |group|
-        .group
-          = link_to '#' do
-            .group__name
-              = group.name
-            .group__message
-              メッセージはまだありません。
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
