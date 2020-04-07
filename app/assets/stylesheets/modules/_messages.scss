@@ -21,7 +21,7 @@ $color_333:#333;
         height: 20px;
         width: 260px;
         margin: 0 20px;
-        background-color: $color_333;
+        background-color: #253141;
         display: flex;
         justify-content: space-between;
         &__user-name {
@@ -55,21 +55,19 @@ $color_333:#333;
       padding: 20px 20px 0;
       overflow: scroll;
       .group {
-        height: 85px;
         width: 260px;
-        &__name {
-          font-size: 15px;
-          color: $color_white;
-          text-decoration: none;
-          height: 23px;
-          padding: 0 0 5px;
-        }
-        &__message {
-          font-size: 11px;
-          color: $color_white;
-          text-decoration: none;
-          height: 17px;
-          padding: 0 0 40px;
+        text-decoration: none; 
+        &-box {
+          margin-bottom: 40px;
+          &__name {
+            font-size: 15px;
+            color: $color_white;
+            padding: 0 0 5px;
+          }
+          &__message {
+            font-size: 11px;
+            color: $color_white;
+          }
         }
       }      
     }
@@ -190,4 +188,3 @@ $color_333:#333;
     }   
   }
 }
-    
